@@ -21,14 +21,14 @@ class info (commands.Cog):
                 users[str(member)] = {}
                 users[str(member)]["Points"] = int(puntuation)
             with open("data.json", "w") as f:
-                json.dump(users,f)
+                json.dump(users,f, indent=4)      
         
         else:
             pass
     """
     @commands.command(name = "add")
     async def _add(self, ctx,*, all):
-        role = discord.utils.get(ctx.guild.roles, id = 802639256928780340)
+        role = discord.utils.get(ctx.guild.roles, id = 755569864013250621)
         if role in ctx.author.roles:
             all = all.replace(" ","").split("~")
             print(all)
@@ -45,7 +45,7 @@ class info (commands.Cog):
                 users[str(member)] = {}
                 users[str(member)]["Points"] = int(puntuation)
             with open("data.json", "w") as f:
-                json.dump(users,f)
+                json.dump(users,f, indent=4)      
                 await ctx.send(f"Puntos añadidos a el usuario {member.name}")
         else:
             await ctx.send("You dont have enough Permissions")
@@ -53,7 +53,7 @@ class info (commands.Cog):
 
     @commands.command(name = "remove")
     async def _remove(self, ctx,*, all):
-        role = discord.utils.get(ctx.guild.roles, id = 802639256928780340)
+        role = discord.utils.get(ctx.guild.roles, id = 755569864013250621)
         if role in ctx.author.roles:
             all = all.replace(" ","").split("~")
             print(all)
